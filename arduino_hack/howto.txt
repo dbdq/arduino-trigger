@@ -1,0 +1,19 @@
+Say ARDUINO_DIR is the root installation path of Arduino software.
+Usually it's at C:\Program Files (x86)\Arduino
+
+1. cd {ARDUINO_DIR}/hardware/arduino/avr/variants/micro
+2. Rename pins_arduino.h to pins_arduino.h.backup
+3. Copy pins_arduino.h.no_rxled to the above folder and rename it to pins_arduino.h
+4. Flash the ROM.
+5. Revert the original pins_arduino.h
+
+
+Difference in source code:
+
+[original header]
+#define RXLED0			PORTB &= ~(1<<0)
+#define RXLED1			PORTB |= (1<<0)
+
+[modified header]
+#define RXLED0 1
+#define RXLED1 1
