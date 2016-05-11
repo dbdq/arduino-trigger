@@ -20,29 +20,28 @@
  */
 
 int led_pin= 13; // LED connected to digital pin 13
-int debug_pin1= 52; // can be set to LOW using jumper pin
-int debug_pin2= 53; // can be set to LOW using jumper pin
+int debug_pin1= 6; // 52 for Mega
+int debug_pin2= 7; // 53 for Mega
 int data= 0;
+int echo_back= 0;
 
 void setup() {
   // ports init
-  DDRB= B11111111; // set all bits as output
-  PORTB= 0;
-  pinMode(led_pin, OUTPUT); // sets the digital pin as output
-  digitalWrite(led_pin, LOW);
   pinMode(debug_pin1, INPUT); // sets the Analog Pin as Output
   pinMode(debug_pin2, INPUT); // sets the Analog Pin as Output
-  digitalWrite(debug_pin1, HIGH);
-  digitalWrite(debug_pin2, HIGH);
+  pinMode(led_pin, OUTPUT); // sets the digital pin as output
+  digitalWrite(debug_pin1, LOW);
+  digitalWrite(debug_pin2, LOW);
+  digitalWrite(led_pin, LOW);
+  DDRB= B11111111; // set all bits as output
+  PORTB= 0;
 
   // serial init
   Serial.begin(115200);
 
-  ///////////////////////////////////////////////////
-  //if ( digitalRead(debug_pin2)==LOW ) debug_pins();
-  ///////////////////////////////////////////////////
-  //debug_pins(); return;
-  ///////////////////////////////////////////////////
+  // debugging modes
+  if ( digitalRead(debug_pin1)==HIGH ) echo_back= 1;
+  if ( digitalRead(debug_pin2)==HIGH ) debug_pins();
 }
 
 void debug_pins()
@@ -76,7 +75,7 @@ void loop()
     PORTB= data;
 
     // echo data back to the client if needed
-    if ( digitalRead(debug_pin1)==LOW ) {
+    if ( echo_back == 1 ) {
       Serial.write(data);
     }
 
@@ -85,11 +84,6 @@ void loop()
       digitalWrite(led_pin, HIGH);  // sets the LED on
     else
       digitalWrite(led_pin, LOW);  // sets the LED off
-  }
-
-  // enter pin testing mode
-  if ( digitalRead(debug_pin2)==LOW ) {
-    debug_pins();
   }
 }
 
