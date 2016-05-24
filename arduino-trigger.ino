@@ -71,6 +71,8 @@ void loop()
     // read the incoming byte
     data= Serial.read();
 
+    Serial.println(data);
+
     // write data to digital port
     PORTB= data;
 

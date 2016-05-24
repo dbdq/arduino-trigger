@@ -96,6 +96,7 @@ if __name__ == '__main__':
 		try:
 			data= int( raw_input('Input? ').strip() )
 			assert 0 <= data <= 255
+			sw.write(data)
 			print('Sent', data)
 		except KeyboardInterrupt:
 			break
