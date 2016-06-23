@@ -27,11 +27,11 @@ int echo_back= 0;
 
 void setup() {
   // ports init
-  pinMode(debug_pin1, INPUT); // sets the Analog Pin as Output
-  pinMode(debug_pin2, INPUT); // sets the Analog Pin as Output
+  pinMode(debug_pin1, INPUT_PULLUP); // sets the Analog Pin as Output
+  pinMode(debug_pin2, INPUT_PULLUP); // sets the Analog Pin as Output
   pinMode(led_pin, OUTPUT); // sets the digital pin as output
-  digitalWrite(debug_pin1, LOW);
-  digitalWrite(debug_pin2, LOW);
+  //digitalWrite(debug_pin1, HIGH);
+  //digitalWrite(debug_pin2, HIGH);
   digitalWrite(led_pin, LOW);
   DDRB= B11111111; // set all bits as output
   PORTB= 0;
@@ -40,8 +40,8 @@ void setup() {
   Serial.begin(115200);
 
   // debugging modes
-  if ( digitalRead(debug_pin1)==HIGH ) echo_back= 1;
-  if ( digitalRead(debug_pin2)==HIGH ) debug_pins();
+  if ( digitalRead(debug_pin1)==LOW ) echo_back= 1;
+  if ( digitalRead(debug_pin2)==LOW ) debug_pins();
 }
 
 void debug_pins()
