@@ -1,0 +1,29 @@
+G04 Layer_Color=0*
+%FSLAX45Y45*%
+%MOMM*%
+%TF.FileFunction,NonPlated,1,2,NPTH,Drill*%
+%TF.Part,Single*%
+G01*
+G75*
+%TA.AperFunction,OtherDrill,Pad Free-0 (4mm,57mm)*%
+%ADD40C,3.25999*%
+%TA.AperFunction,OtherDrill,Pad Free-0 (27mm,4mm)*%
+%ADD41C,3.25999*%
+%TA.AperFunction,OtherDrill,Pad Free-0 (19.7mm,56.9mm)*%
+%ADD42C,3.25999*%
+%TA.AperFunction,OtherDrill,Pad Free-0 (10.8mm,9.7mm)*%
+%ADD43C,3.25999*%
+D40*
+X400002Y5699999D02*
+D03*
+D41*
+X2699998Y399999D02*
+D03*
+D42*
+X1970002Y5690001D02*
+D03*
+D43*
+X1080001Y970001D02*
+D03*
+%TF.MD5,abf293405df9660574ea3df443783748*%
+M02*
