@@ -1,0 +1,53 @@
+CAMtasticDXP Aperture List
+Serial Number:  0000-00-00000
+
+
+Format:  4.5
+Zero Suppression:  Leading
+Type:  Absolute
+UNITS: Metric (mm)
+     
+DCODE:		TYPE:			DIMENSIONS				ROTATE:
+----------------------------------------------------------------------------------------
+10		Rectangle		0.6350:1.2700				0.0
+11		Round			0.2540
+12		Round			3.2600
+13		Rectangle		1.5000:1.5000				0.0
+14		Round			1.5000
+15		Round			1.6900
+16		Rectangle		1.6900:1.6900				0.0
+17		Round			4.7600
+18		Round			1.1999
+19		Octagon			1.5748:1.5748:0.3937			270.0
+20		Round			1.5748
+21		Round			1.4000
+22		Round			0.2000
+23		Round			0.1270
+24		Round			0.1524
+25		Round			0.2540
+26		Round			0.1500
+27		Rectangle		0.8382:1.4732				0.0
+28		Round			3.4632
+29		Rectangle		1.7032:1.7032				0.0
+30		Round			1.7032
+31		Round			1.8932
+32		Rectangle		1.8932:1.8932				0.0
+33		Round			4.9632
+34		Round			1.4031
+35		Octagon			1.7780:1.7780:0.4445			270.0
+36		Round			1.7780
+37		Round			1.6032
+38		Rectangle		0.5080:0.5080				0.0
+39		Round			0.0254
+40		Round			3.2600
+41		Round			3.2600
+42		Round			3.2600
+43		Round			3.2600
+44		Round			0.9000
+45		Round			1.0900
+46		Round			3.2600
+47		Round			1.1999
+48		Round			1.0160
+49		Round			1.0160
+50		Round			0.8500
+52		Round			0.1693
