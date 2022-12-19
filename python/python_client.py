@@ -10,9 +10,8 @@ Swiss Federal Institute of Technology Lausanne (EPFL)
 
 """
 
-import pycnbi.utils.cnbi_lsl as cnbi_lsl
-import pycnbi.utils.pycnbi_utils as pu
-import pycnbi.utils.q_common as qc
+import neurodecode.utils.pycnbi_utils as pu
+import neurodecode.utils.q_common as qc
 import pylsl
 import threading
 import os
@@ -119,7 +118,8 @@ class Trigger(object):
             print('Connected to %s.' % com_port)
 
         elif self.lpttype == 'SOFTWARE':
-            from pycnbi.stream_receiver.stream_receiver import StreamReceiver
+            import neurodecode.utils.cnbi_lsl as cnbi_lsl
+            from neurodecode.stream_receiver.stream_receiver import StreamReceiver
             self.print('Using software trigger')
 
             # get data file location
@@ -293,8 +293,8 @@ def test_all_bits(trigger):
 
 # sample test code
 if __name__ == '__main__':
-    #trigger = Trigger('COM3') # Arduino trigger
-    trigger = Trigger('ARDUINO') # Arduino trigger
+    trigger = Trigger('ARDUINO')
+    #trigger = Trigger('ARDUINO', 'COM5')
     if not trigger.init(500):
         print('LPT port cannot be opened. Using mock trigger.')
         trigger = MockTrigger()
